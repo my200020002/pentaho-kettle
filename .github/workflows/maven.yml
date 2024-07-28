@@ -26,12 +26,13 @@ jobs:
       run: wget https://github.com/pentaho/pentaho-kettle/archive/refs/tags/10.3.0.0-25.zip -O pentaho-kettle-10.3.0.0-25.zip
     - name: unzip
       run: unzip pentaho-kettle-10.3.0.0-25.zip
-    - name: cd workdir
-      run: cd pentaho-kettle-10.3.0.0-25
-        
     - name: download settings
       run: wget https://raw.githubusercontent.com/pentaho/maven-parent-poms/master/maven-support-files/settings.xml -O ${HOME}/.m2/settings.xml
-
+    - name: move
+      run: pentaho-kettle-10.3.0.0-25 /home/runner/work/pentaho-kettle/pentaho-kettle
+    - name: cd
+      run: cd /home/runner/work/pentaho-kettle/pentaho-kettle
+    
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
