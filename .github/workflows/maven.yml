@@ -22,6 +22,13 @@ jobs:
     steps:
     - name: mkdir
       run: mkdir ${HOME}/.m2/ -p
+    - name: checkout
+      run: wget https://github.com/pentaho/pentaho-kettle/archive/refs/tags/10.3.0.0-25.zip -O pentaho-kettle-10.3.0.0-25.zip
+    - name: unzip
+      run: unzip pentaho-kettle-10.3.0.0-25.zip
+    - name: cd workdir
+      run: cd pentaho-kettle-10.3.0.0-25
+        
     - name: download settings
       run: wget https://raw.githubusercontent.com/pentaho/maven-parent-poms/master/maven-support-files/settings.xml -O ${HOME}/.m2/settings.xml
     - uses: actions/checkout@v4
