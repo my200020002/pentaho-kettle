@@ -29,7 +29,7 @@ jobs:
     - name: download settings
       run: wget https://raw.githubusercontent.com/pentaho/maven-parent-poms/master/maven-support-files/settings.xml -O ${HOME}/.m2/settings.xml
     - name: move
-      run: pentaho-kettle-10.3.0.0-25 /home/runner/work/pentaho-kettle/pentaho-kettle
+      run: mv pentaho-kettle-10.3.0.0-25 /home/runner/work/pentaho-kettle/pentaho-kettle
     - name: cd
       run: cd /home/runner/work/pentaho-kettle/pentaho-kettle
     
